@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Skills & Projects</title>
+    <style>
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #0f0f0f;
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+
+        /* Navbar Styles */
+        nav {
+            background-color: #121212;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .nav-left img {
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            /* color: #00e6e6; */
+            border: 2px solid #00e6e6;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #00e6e6;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: #e0e0e0;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #00e6e6;
+            transform: scale(1.05);
+        }
+
+        /* Hamburger */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: #fff;
+            transition: all 0.3s ease;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                flex-direction: column;
+                background-color: #121212;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease-out;
+            }
+
+            .nav-links.show {
+                max-height: 300px;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+        }
+
+        /* Main Content */
+        main {
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: #00e6e6;
+            margin-bottom: 1rem;
+        }
+
+        .highlight {
+            border: 2px dashed #00e6e6;
+            padding: 1rem;
+            margin: 1rem auto;
+            max-width: 600px;
+        }
+
+        /* Image Center */
+        .center-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #00e6e6;
+            margin: 2rem auto;
+        }
+
+        body {
+            background: linear-gradient(to right, #0a0a0a, #111122);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-top: 2rem;
+            color: #00e6e6;
+        }
+
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            padding: 2rem;
+        }
+
+        .skill-card {
+            background-color: #181818;
+            border-radius: 12px;
+            padding: 1.5rem;
+            width: 220px;
+            text-align: center;
+            color: white;
+            box-shadow: 0 0 10px rgba(0, 230, 230, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0 20px rgba(0, 230, 230, 0.4);
+        }
+
+        .skill-card i {
+            font-size: 2.5rem;
+            color: #00e6e6;
+            margin-bottom: 0.8rem;
+        }
+
+        .project-section {
+            margin-top: 3rem;
+            padding: 2rem;
+        }
+
+        .projects-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+        }
+
+        .project-tile {
+            background-color: #1f1f1f;
+            color: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            width: 300px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-tile a {
+            color: #00e6e6;
+            text-decoration: underline;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .project-tile a:hover {
+            color: #00ff88;
+        }
+
+
+        .project-tile:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(0, 230, 230, 0.4);
+        }
+
+        .project-tile h3 {
+            color: #00e6e6;
+            margin-bottom: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+
+            .skill-card,
+            .project-tile {
+                width: 90%;
+            }
+        }
+
+        /* using this for project image */
+        .clickable-img {
+            width: 100%;
+            max-height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-top: 10px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .clickable-img:hover {
+            transform: scale(1.02);
+        }
+
+        .img-popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            display: none;
+        }
+
+        .img-popup img {
+            max-width: 90%;
+            max-height: 90%;
+            border: 3px solid #00e6e6;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <div class="nav-left">
+            <img src="Ashhad.jpeg" alt="Profile Photo" />
+            <div class="logo">ASHHAD</div>
+        </div>
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="nav-links" id="navLinks">
+            <a href="index.html">Home</a>
+            <a href="index1.html">About</a>
+            <a href="index2.html">Skills</a>
+            <a href="index3.html">Contact</a>
+        </div>
+    </nav>
+
+    <main>
+        <h1 class="section-title">My Skills</h1>
+        <div class="skills-container">
+            <div class="skill-card">
+                <i class="fab fa-html5"></i>
+                <h3>HTML5</h3>
+            </div>
+            <div class="skill-card">
+                <i class="fab fa-css3-alt"></i>
+                <h3>CSS3</h3>
+            </div>
+            <div class="skill-card">
+                <i class="fab fa-js-square"></i>
+                <h3>JavaScript</h3>
+            </div>
+            <div class="skill-card">
+                <i class="fab fa-react"></i>
+                <h3>React</h3>
+            </div>
+            <div class="skill-card">
+                <i class="fab fa-node"></i>
+                <h3>Node.js</h3>
+            </div>
+        </div>
+
+        <section class="project-section">
+            <h1 class="section-title">Projects</h1>
+            <div class="projects-grid">
+                <div class="project-tile">
+                    <h3>MENU CARD</h3>
+                    <p>
+                        A personal website made with HTML, CSS.
+                        <a href="https://inquisitive-chimera-8addd8.netlify.app/?authuser=0" target="_blank">View
+                            Project</a>
+                    </p>
+                </div>
+                <div class="project-tile">
+                    <h3>SIMPLE FORM</h3>
+                    <p>
+                        A personal gym form made using HTML, CSS.
+                    </p>
+                    <img src="Pj.png" alt="Gym Form" class="clickable-img" />
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // using this for hamburger function
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('show');
+        }
+        // Image popup logic
+        document.addEventListener("DOMContentLoaded", () => {
+            const popup = document.createElement("div");
+            popup.className = "img-popup";
+            popup.innerHTML = '<img src="" alt="Popup Image">';
+            document.body.appendChild(popup);
+
+            const popupImg = popup.querySelector("img");
+
+            document.querySelectorAll(".clickable-img").forEach(img => {
+                img.addEventListener("click", () => {
+                    popupImg.src = img.src;
+                    popup.style.display = "flex";
+                });
+            });
+
+            popup.addEventListener("click", () => {
+                popup.style.display = "none";
+                popupImg.src = "";
+            });
+        });
+
+    </script>
+</body>
+
+</html>
