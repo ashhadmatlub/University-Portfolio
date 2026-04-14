@@ -141,7 +141,7 @@ nav {
   transition: 0.3s;
 }
 
-.primary {
+/* .primary {
   background: linear-gradient(135deg, #00e6e6, #00ff88);
   color: #000;
 }
@@ -149,7 +149,7 @@ nav {
 .primary:hover {
   transform: translateY(-3px);
   box-shadow: 0 10px 25px rgba(0, 255, 200, 0.4);
-}
+} */
 
 .secondary {
   border: 1px solid #00e6e6;
