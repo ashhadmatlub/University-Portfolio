@@ -268,14 +268,14 @@ body {
   border: 3px solid #00e6e6;
   border-radius: 8px;
 }
-/* 🔥 GLASS NAVBAR */
+/* GLASS NAVBAR */
 nav {
   background: rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(0, 230, 230, 0.2);
 }
 
-/* 🔥 GRID LAYOUT */
+/* GRID LAYOUT */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -283,7 +283,7 @@ nav {
   padding: 2rem;
 }
 
-/* 🔥 SKILL CARDS UPGRADE */
+/* SKILL CARDS UPGRADE */
 .skill-card {
   font-size: 1.2rem;
   font-weight: 600;
@@ -312,7 +312,7 @@ nav {
   transform: translateX(100%);
 }
 
-/* 🔥 PROJECT CARD INSANE EFFECT */
+/* PROJECT CARD INSANE EFFECT */
 .project-tile {
   position: relative;
   overflow: hidden;
@@ -336,7 +336,7 @@ nav {
   opacity: 1;
 }
 
-/* 🔥 BUTTON IMPROVED */
+/* BUTTON IMPROVED */
 .project-tile a {
   display: inline-block;
   margin-top: 12px;
@@ -353,7 +353,7 @@ nav {
   box-shadow: 0 10px 25px rgba(0, 255, 136, 0.4);
 }
 
-/* 🔥 SCROLL ANIMATION */
+/* SCROLL ANIMATION */
 .reveal {
   opacity: 0;
   transform: translateY(40px);
@@ -365,7 +365,15 @@ nav {
   transform: translateY(0);
 }
 
-/* 🔥 MOBILE PERFECT */
+/*  FAILSAFE (IMPORTANT) */
+@media (max-height: 500px) {
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* MOBILE PERFECT */
 @media (max-width: 768px) {
   .projects-grid {
     grid-template-columns: 1fr;
@@ -376,7 +384,7 @@ nav {
     align-items: center;
   }
 }
-/* 🔥 LOADER */
+/* LOADER */
 #loader {
   position: fixed;
   width: 100%;
@@ -395,7 +403,7 @@ nav {
   visibility: hidden;
   transition: 0.5s;
 }
-/* 🔥 CUSTOM CURSOR */
+/* CUSTOM CURSOR */
 .cursor {
   width: 20px;
   height: 20px;

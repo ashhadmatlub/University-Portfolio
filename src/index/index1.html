@@ -17,6 +17,8 @@
   </style>
 
   <body>
+    <div id="loader">Loading...</div>
+    <div class="cursor"></div>
     <nav>
       <div class="nav-left">
         <img src="../../jpeg/Ashhad.jpeg" alt="Profile Photo" />
@@ -48,7 +50,7 @@
         </div>
 
         <div class="about-content reveal">
-          <h2>Who am I?</h2>
+          <h2 class="typing"></h2>
 
           <p>
             Hello! I'm <strong>Ashhad Matlub</strong>, a Computer Science
@@ -89,17 +91,17 @@
 
           <div class="about-stats">
             <div class="stat">
-              <h3>5+</h3>
+              <h3 class="counter" data-target="5">0</h3>
               <p>Projects</p>
             </div>
 
             <div class="stat">
-              <h3>1+</h3>
+              <h3 class="counter" data-target="1">0</h3>
               <p>Year Learning</p>
             </div>
 
             <div class="stat">
-              <h3>100%</h3>
+              <h3 class="counter" data-target="100">0</h3>
               <p>Dedication</p>
             </div>
           </div>
@@ -107,38 +109,6 @@
       </section>
     </main>
 
-    <script>
-      function toggleMenu() {
-        document.getElementById("navLinks").classList.toggle("show");
-      }
-
-      // 🔥 SKILL BAR ANIMATION
-      window.addEventListener("load", () => {
-        document.querySelectorAll(".bar span").forEach((bar) => {
-          let finalWidth = bar.getAttribute("style");
-          bar.style.width = "0";
-
-          setTimeout(() => {
-            bar.style.width = finalWidth.replace("width:", "");
-          }, 500);
-        });
-      });
-
-      // 🔥 SCROLL REVEAL
-      function reveal() {
-        let reveals = document.querySelectorAll(".reveal");
-
-        reveals.forEach((el) => {
-          let windowHeight = window.innerHeight;
-          let elementTop = el.getBoundingClientRect().top;
-
-          if (elementTop < windowHeight - 100) {
-            el.classList.add("active");
-          }
-        });
-      }
-
-      window.addEventListener("scroll", reveal);
-    </script>
+    <script src="./../script/script1.js"></script>
   </body>
 </html>

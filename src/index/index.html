@@ -12,6 +12,7 @@
   </head>
 
   <body>
+    <div class="bg-glow"></div>
     <nav>
       <div class="nav-left">
         <img src="../../jpeg/Ashhad.jpeg" alt="Error 404" />
@@ -23,7 +24,7 @@
         <div></div>
       </div>
       <div class="nav-links" id="navLinks">
-        <a href="index.html">Home</a>
+        <a href="index.html" class="active">Home</a>
         <a href="index1.html">About</a>
         <a href="index2.html">Skills</a>
         <a href="index3.html">Contact</a>
@@ -40,18 +41,18 @@
       <a href="https://facebook.com/Ashhad.matlub" target="_blank">
         <img src="../../png/Fb.png" alt="Facebook" />
       </a>
-      <a href="" target="_blank">
-        <img src="../../png/X.png" alt="Twitter" />
-      </a>
-      <a href="" target="_blank">
+      <a
+        href="https://www.linkedin.com/in/ashhad-matlub-29b85536b?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+        target="_blank"
+      >
         <img src="../../png/In.png" alt="LinkedIn" />
       </a>
     </div>
 
     <main class="hero">
-      <div class="hero-content">
+      <div class="hero-content reveal">
         <h1>Hello, I'm <span>Ashhad Matlub</span></h1>
-        <h2>Frontend Web Developer</h2>
+        <h2>I am <span id="typing"></span></h2>
 
         <p>
           I build clean, responsive and modern websites using HTML, CSS and
@@ -70,11 +71,6 @@
       </div>
     </main>
 
-    <script>
-      function toggleMenu() {
-        const navLinks = document.getElementById("navLinks");
-        navLinks.classList.toggle("show");
-      }
-    </script>
+    <script src="./../script/script.js"></script>
   </body>
 </html>
