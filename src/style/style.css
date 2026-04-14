@@ -193,7 +193,7 @@ nav {
 .social-icons {
   position: fixed;
   top: 50%;
-  left: 10px;
+  left: 17px;
   transform: translateY(-50%);
   display: flex;
   flex-direction: column;
@@ -288,11 +288,21 @@ nav {
   transform: translateY(0);
 }
 
-/* 🔥 FAILSAFE (IMPORTANT) */
+/* FAILSAFE (IMPORTANT) */
 @media (max-height: 500px) {
   .reveal {
     opacity: 1 !important;
     transform: none !important;
+  }
+}
+@media (max-width: 768px) {
+  .social-icons {
+    position: static; /* removes fixed behavior */
+    transform: none;
+    margin-top: 2rem;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1.5rem;
   }
 }
 .bg-glow {
