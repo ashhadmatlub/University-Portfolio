@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Ashhad Matlub Portfolio - Web Developer"
+    />
+    <title>Contact Me</title>
+    <link rel="stylesheet" href="./../style/style3.css" />
+  </head>
+
+  <body>
+    <nav>
+      <div class="nav-left">
+        <img src="../../jpeg/Ashhad.jpeg" alt="Profile Photo" />
+        <div class="logo">ASHHAD</div>
+      </div>
+      <div class="hamburger" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="index1.html">About</a>
+        <a href="index2.html">Skills</a>
+        <a href="index3.html">Contact</a>
+      </div>
+    </nav>
+
+    <main>
+      <h1 class="section-title">Contact Me</h1>
+
+      <div class="contact-container">
+        <form id="contactForm">
+          <input type="text" id="name" placeholder="Your Name" required />
+          <input type="email" id="email" placeholder="Your Email" required />
+          <textarea
+            id="message"
+            rows="6"
+            placeholder="Your Message"
+            required
+          ></textarea>
+          <button type="submit">Send Message</button>
+          <div class="success-msg" id="successMsg">
+            Message sent successfully ✅
+          </div>
+          <div class="error-msg" id="errorMsg">
+            Please fill in all fields correctly ❌
+          </div>
+        </form>
+      </div>
+    </main>
+
+    <script>
+      function toggleMenu() {
+        const navLinks = document.getElementById("navLinks");
+        navLinks.classList.toggle("show");
+      }
+
+      // Simple form validation
+      const form = document.getElementById("contactForm");
+      const successMsg = document.getElementById("successMsg");
+      const errorMsg = document.getElementById("errorMsg");
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const message = document.getElementById("message").value.trim();
+
+        if (name && email && message && email.includes("@")) {
+          successMsg.style.display = "block";
+          errorMsg.style.display = "none";
+          form.reset();
+
+          setTimeout(() => {
+            successMsg.style.display = "none";
+          }, 3000);
+        } else {
+          successMsg.style.display = "none";
+          errorMsg.style.display = "block";
+        }
+      });
+    </script>
+  </body>
+</html>

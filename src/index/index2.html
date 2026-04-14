@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Ashhad Matlub Portfolio - Web Developer"
+    />
+    <title>Skills & Projects</title>
+    <link rel="stylesheet" href="./../style/style2.css" />
+  </head>
+
+  <body>
+    <div id="loader">
+      <h1>Loading...</h1>
+    </div>
+    <nav>
+      <div class="nav-left">
+        <img src="../../jpeg/Ashhad.jpeg" alt="Profile Photo" />
+        <div class="logo">Ashhad</div>
+      </div>
+
+      <div class="hamburger" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="index1.html">About</a>
+        <a href="index2.html" class="active">Skills</a>
+        <a href="index3.html">Contact</a>
+      </div>
+    </nav>
+
+    <main>
+      <section class="skills-section reveal">
+        <h1 class="section-title">I am a <span id="typing"></span></h1>
+
+        <div class="skills-container">
+          <div class="skill-card">HTML5</div>
+          <div class="skill-card">CSS3</div>
+          <div class="skill-card">JavaScript</div>
+          <div class="skill-card">C++</div>
+          <div class="skill-card">Java</div>
+        </div>
+      </section>
+
+      <section class="project-section reveal">
+        <h1 class="section-title">Projects</h1>
+
+        <div class="projects-grid">
+          <div class="project-tile">
+            <h3>Assignment 1</h3>
+            <p>HTML structure and semantic layout.</p>
+            <a href="../Assignment_1/index.html">View Project →</a>
+          </div>
+
+          <div class="project-tile">
+            <h3>Assignment 2</h3>
+            <p>Modern CSS styling techniques.</p>
+            <a href="../Assignment_2/index.html">View Project →</a>
+          </div>
+
+          <div class="project-tile">
+            <h3>Assignment 3</h3>
+            <p>Responsive design implementation.</p>
+            <a href="../Assignment_3/index.html">View Project →</a>
+          </div>
+
+          <div class="project-tile">
+            <h3>Assignment 4</h3>
+            <p>JavaScript logic & interactivity.</p>
+            <a href="../Assignment_4/index.html">View Project →</a>
+          </div>
+
+          <div class="project-tile">
+            <h3>Assignment 5</h3>
+            <p>Advanced UI components.</p>
+            <a href="../Assignment_5/index.html">View Project →</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div class="cursor"></div>
+    <script>
+      function toggleMenu() {
+        document.getElementById("navLinks").classList.toggle("show");
+      }
+
+      //  TYPING EFFECT
+      const textArray = ["Web Developer", "Frontend Developer", "Programmer"];
+      let index = 0;
+      let charIndex = 0;
+      let currentText = "";
+      let isDeleting = false;
+
+      function type() {
+        const typing = document.getElementById("typing");
+
+        if (!typing) return;
+
+        if (isDeleting) {
+          currentText = textArray[index].substring(0, charIndex--);
+        } else {
+          currentText = textArray[index].substring(0, charIndex++);
+        }
+
+        typing.textContent = currentText;
+
+        if (!isDeleting && charIndex === textArray[index].length) {
+          isDeleting = true;
+          setTimeout(type, 1000);
+        } else if (isDeleting && charIndex === 0) {
+          isDeleting = false;
+          index = (index + 1) % textArray.length;
+          setTimeout(type, 300);
+        } else {
+          setTimeout(type, isDeleting ? 50 : 100);
+        }
+      }
+
+      type();
+
+      // SCROLL REVEAL
+      function reveal() {
+        document.querySelectorAll(".reveal").forEach((el) => {
+          let windowHeight = window.innerHeight;
+          let elementTop = el.getBoundingClientRect().top;
+
+          if (elementTop < windowHeight - 100) {
+            el.classList.add("active");
+          }
+        });
+      }
+
+      window.addEventListener("scroll", reveal);
+      // LOADER REMOVE
+
+      window.addEventListener("load", () => {
+        document.getElementById("loader").classList.add("hide");
+      });
+      //  CURSOR MOVE
+      const cursor = document.querySelector(".cursor");
+
+      document.addEventListener("mousemove", (e) => {
+        cursor.style.top = e.clientY + "px";
+        cursor.style.left = e.clientX + "px";
+      });
+    </script>
+  </body>
+</html>
