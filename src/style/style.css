@@ -325,3 +325,26 @@ html {
 .nav-links a.active::after {
   width: 100%;
 }
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #111;
+    flex-direction: column;
+    gap: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  .nav-links a {
+    padding: 12px;
+    text-align: center;
+  }
+
+  .nav-links.show {
+    max-height: 300px;
+  }
+}

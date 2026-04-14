@@ -68,15 +68,14 @@ nav {
 .hamburger {
   display: none;
   flex-direction: column;
-  cursor: pointer;
   gap: 5px;
+  cursor: pointer;
 }
 
 .hamburger div {
   width: 25px;
   height: 3px;
-  background-color: #fff;
-  transition: all 0.3s ease;
+  background: #fff;
 }
 
 @media (max-width: 768px) {

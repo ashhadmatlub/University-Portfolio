@@ -1,5 +1,6 @@
 function toggleMenu() {
-  document.getElementById("navLinks").classList.toggle("show");
+  const navLinks = document.getElementById("navLinks");
+  navLinks.classList.toggle("show");
 }
 
 //  TYPING EFFECT
