@@ -38,6 +38,5 @@ Ashhad Matlub
 Web Developer & Computer Science Student
 
 GitHub: https://github.com/ashhadmatlub
-Portfolio: https://ashhadportfolios.netlify.app/
 
 ⭐ If you like this project, feel free to star the repository!
